@@ -2,12 +2,12 @@
 #define SENSORTEMPERATURA_HPP
 //--------------------------------------------------------------------------
 #include "Includes.hpp"
+#include <DallasTemperature.h>
 
 //--------------------------------------------------------------------------
 class SensorTemperatura{
    public:
       SensorTemperatura();
-      void IniciaSensorTemp();
       void VerificaSensor();
   private:
     float tempMin = 999;
@@ -18,10 +18,6 @@ class SensorTemperatura{
 SensorTemperatura::SensorTemperatura(){
 }
 
-void SensorTemperatura::IniciaSensorTemp(){
-  //OneWire sensorTemp(Includes->getPinoSensorTemperatura());
-  DallasTemperatura sensors(sensorTemp);
-}
 
 void SensorTemperatura::VerificaSensor(){
  
