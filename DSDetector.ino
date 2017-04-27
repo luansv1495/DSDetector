@@ -14,6 +14,7 @@
   const int botao = 12;//Pino Botão
 //------------------------------VARIAVEIS-------------------------------------------------
   int estadoBotao = 0;//Estado do botão
+  int limpar = 0;
 //------------------------------PONTEIROS-------------------------------------------------
   SensorTemperatura *sensorTemp;
   OneWire oneWire(pinoTemperatura);
@@ -21,6 +22,7 @@
   DeviceAddress sensor1;
 //------------------------------METODOS---------------------------------------------------
 bool sistemaEstado();
+void limparTela();
 //------------------------------SETUP-----------------------------------------------------
 void setup(){
   sensorTemp = new SensorTemperatura(pinoTemperatura);
@@ -33,14 +35,18 @@ void setup(){
 
 //------------------------------LOOP-----------------------------------------------------
 void loop(){
- if(sistemaEstado()){
-  if(sensorTemp->verificarSensorTemp(sensors,sensor1)){
-       sensorTemp->celsius(sensors,sensor1);
-       sensorTemp->imprimirTemp();      
-   }
+ if(!sistemaEstado()){
+    limparTela(limpar);
+    limpar=0;
+ }else{
+    if(sensorTemp->verificarSensorTemp(sensors,sensor1)){
+         sensorTemp->celsius(sensors,sensor1);
+         sensorTemp->imprimirTemp();
+         limpar = 1;   
+    }
  }
+  delay(500);
 }
-
 bool sistemaEstado(){//Verifica se o sistema está ligado
   estadoBotao = digitalRead(botao);
   if(estadoBotao==HIGH){
@@ -52,4 +58,9 @@ bool sistemaEstado(){//Verifica se o sistema está ligado
   } 
 }
 
+void limparTela(int limpar){//Limpa a tela
+  if(limpar!=0){
+    Serial.println("\n\n\n\n\n\n\n\n\n\n\n");
+  }
+}
 
