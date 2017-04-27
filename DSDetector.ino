@@ -22,7 +22,7 @@
   DeviceAddress sensor1;
 //------------------------------METODOS---------------------------------------------------
 bool sistemaEstado();
-void limparTela();
+void limparTela(int limpar);
 //------------------------------SETUP-----------------------------------------------------
 void setup(){
   sensorTemp = new SensorTemperatura(pinoTemperatura);
