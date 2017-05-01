@@ -9,6 +9,7 @@
 class SensorTemperatura{
    public:
       SensorTemperatura(int pino);
+      ~SensorTemperatura();
       bool verificarSensorTemp(DallasTemperature sensors,DeviceAddress sensor1);
       void mostrarEndereco(DeviceAddress sensor1);
       float getTempMin();
@@ -30,6 +31,9 @@ SensorTemperatura::SensorTemperatura(int pino){//Contrutor
       this->pino = pino;
       this->tempMin=999;
       this->tempMax=0;
+}
+
+SensorTemperatura::~SensorTemperatura(){
 }
 
 float SensorTemperatura::getTempMin(){//Pegar Temperatura Minima
@@ -97,6 +101,8 @@ void SensorTemperatura::imprimirTemp(){//Imprimir informações adquiridas pelo 
   Serial.print(getTempMax());
   Serial.println("ºC");
 }
+
+
 
 #endif
 

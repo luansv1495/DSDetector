@@ -43,6 +43,10 @@ void loop(){
          sensorTemp->celsius(sensors,sensor1);
          sensorTemp->imprimirTemp();
          limpar = 1;   
+    }else{//se não encontrar o sensor
+      sensorTemp->setTempMax(0);
+      sensorTemp->setTempMin(999);
+      delay(500);
     }
  }
   delay(500);
