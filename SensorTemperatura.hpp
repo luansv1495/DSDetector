@@ -6,19 +6,18 @@
 #include <DallasTemperature.h>
 
 //------------------------------CLASSE----------------------------------------------------
-class SensorTemperatura{
+class SensorTemperatura{//Classe
    public:
-      SensorTemperatura(int pino);
-      ~SensorTemperatura();
-      bool verificarSensorTemp(DallasTemperature sensors,DeviceAddress sensor1);
-      void mostrarEndereco(DeviceAddress sensor1);
-      float getTempMin();
-      float getTempMax();
-      float getTempAtual();
-      void setTempMin(float tempMin);
-      void setTempMax(float tempMax);
-      void celsius(DallasTemperature sensors,DeviceAddress sensor1);
-      void imprimirTemp(); 
+      SensorTemperatura(int pino);//Contrutor recebendo parametro pino
+      ~SensorTemperatura();//Destrutor
+      bool verificarSensorTemp(DallasTemperature sensors,DeviceAddress sensor1);//Verificar se o sensor de temperatura está conectado
+      float getTempMin();//Pegar Temperatura Minima
+      float getTempMax();//Pegar Temperatura Atual
+      float getTempAtual();//Pegar Temperatura Atual
+      void setTempMin(float tempMin);//Inserir Temperatura Minima
+      void setTempMax(float tempMax);//Inserir Temperatura Maxima
+      void celsius(DallasTemperature sensors,DeviceAddress sensor1);//Pegar a temperatura do ambiente e inserir temperatura maxima, minima e atual
+      void imprimirTemp(); //Imprimir informações adquiridas pelo sensor de temperatura
   private:
       float tempMin;
       float tempMax;
@@ -28,81 +27,67 @@ class SensorTemperatura{
 
 //------------------------------METODOS---------------------------------------------------
 SensorTemperatura::SensorTemperatura(int pino){//Contrutor
-      this->pino = pino;
-      this->tempMin=999;
-      this->tempMax=0;
+     this->pino = pino;//inseri o valor do pino que se encontra o sensor
+     tempMin=999;//inicia valor da temperatura minima e maxima
+      tempMax=0;
 }
 
-SensorTemperatura::~SensorTemperatura(){
+SensorTemperatura::~SensorTemperatura(){//Destrutor
 }
 
 float SensorTemperatura::getTempMin(){//Pegar Temperatura Minima
-  return this->tempMin;
+  return this->tempMin;//retorna valor da temperatura minima
 }
 
 float SensorTemperatura::getTempAtual(){//Pegar Temperatura Atual
-  return this->tempAtual;
+  return this->tempAtual;//retorna valor da temperatura atual
 }
 
 float SensorTemperatura::getTempMax(){//Pegar Temperatura Maxima
-  return this->tempMax;
+  return this->tempMax;//retorna valor da temperatura maxima
 }
 
 void  SensorTemperatura::setTempMax(float tempMax){//Inserir Temperatura Maxima
-  this->tempMax = tempMax;
+  this->tempMax = tempMax;//insere o novo valor da temperatura maxima
 }
 
 void  SensorTemperatura::setTempMin(float tempMin){//Inserir Temperatura Minima
-  this->tempMin = tempMin;
+  this->tempMin = tempMin;//insere o novo valor da temperatura minima
 }
 
 bool SensorTemperatura::verificarSensorTemp(DallasTemperature sensors, DeviceAddress sensor1){//Verificar se o sensor de temperatura está conectado
-  if(!sensors.getAddress(sensor1,0)){
+  if(!sensors.getAddress(sensor1,0)){//Pesquisa se a sensor conectado caso não encontrar
       Serial.println("Sensor de Temperatura nao encontrado!");
       Serial.println();
-      return false;
-  }else{
+      return false;//retorna falso caso não encontrar sensor
+  }else{//Sensor encontrado
       Serial.println("Sensor de Temperatura encontrado!");
-      Serial.print("Endereco: ");
-      mostrarEndereco(sensor1);
-      Serial.println();
-      return true;
+      //Serial.println();
+      return true;//retorna verdade caso encontrar o sensor
   } 
 }
 
-void SensorTemperatura::mostrarEndereco(DeviceAddress sensor1){//Mostrar o endereco do sensor de temperatura
-    for(uint8_t i=1; i<8;i++){
-      if(sensor1[i]<16){
-        Serial.print("0");
-      }else{
-        Serial.print(sensor1[i],HEX);
-      }
-    }
-}
-
 void SensorTemperatura::celsius(DallasTemperature sensors,DeviceAddress sensor1){//Pegar a temperatura do ambiente e inserir temperatura maxima, minima e atual
-    sensors.requestTemperatures();
-    float tempCelsius = sensors.getTempC(sensor1);
-    if(tempCelsius<this->tempMin){
-      this->tempMin = tempCelsius;
+    sensors.requestTemperatures();//Metodo para obter a temperatura
+    float tempCelsius = sensors.getTempC(sensor1);//Metodo para obter a temperatura em celsius
+    if(tempCelsius<this->tempMin){//se o valor lido for menor que a temperatura minima
+      this->tempMin = tempCelsius;//insere a nova temperatura minima
     }
-    if(tempCelsius>this->tempMax){
-        this->tempMax = tempCelsius;
+    if(tempCelsius>this->tempMax){//se o valor lido for maior que a temperatura maxima
+        this->tempMax = tempCelsius;//insere a nova temperatura maxima
     }
-    this->tempAtual = tempCelsius;
+    this->tempAtual = tempCelsius;//insere a temperatura atual
 }
 
 void SensorTemperatura::imprimirTemp(){//Imprimir informações adquiridas pelo sensor de temperatura
   Serial.print("Temperatura: ");
-  Serial.print(getTempAtual());
+  Serial.print(getTempAtual());//pega valor da temperatura atual
   Serial.print("ºC Min: ");
-  Serial.print(getTempMin());
+  Serial.print(getTempMin());//pega valor da temperatura minima
   Serial.print("ºC Max: ");
-  Serial.print(getTempMax());
+  Serial.print(getTempMax());//pega valor da temperatura maxima
   Serial.println("ºC");
 }
-
-
 
 #endif
 

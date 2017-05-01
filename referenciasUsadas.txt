@@ -1,0 +1,34 @@
+Referencias projeto:
+1.Extensão ds18b20 para fritzing
+https://github.com/adafruit/Fritzing-Library/blob/master/parts/DS18B20%201-Wire%20Temperature%20Sensor%20Probe%20Cable.fzpz
+2.exemplo de conexão ds18b20
+http://blog.filipeflop.com/sensores/sensor-de-temperatura-ds18b20-arduino.html?_ga=2.135327544.846095165.1493668294-1602197068.1493609788
+3.Datasheet ds18b20
+http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf
+4.Biblioteca OneWire
+https://github.com/pbrook/arduino-onewire
+5.Biblioteca Dallas Temperature
+https://github.com/milesburton/Arduino-Temperature-Control-Library
+6.Exemplo de conexão ds18b20
+http://labdegaragem.com/profiles/blogs/tutorial-como-utilizar-o-sensor-de-temperatura-ds18b20-prova-de
+7.Sobre instalação de bibliotecas arduino
+https://www.arduino.cc/en/Guide/Libraries
+8.Central de bibliotecas arduinos
+https://www.pjrc.com/teensy/td_libs.html
+9.Mais sobre a biblioteca OneWire
+https://www.pjrc.com/teensy/td_libs_OneWire.html
+10.Exemplo de conexão ds18b20http://microcontrolandos.blogspot.com.br/2013/02/arduino-leitura-do-sensor-ds18s20-e-ds18b20.html
+11.Exemplo de conexão ds18b20
+http://dqsoft.blogspot.com.br/2013/07/sensor-de-temperatura-ds18b20-ligado-ao_17.html
+12.pinMode
+https://multilogica-shop.com/content/pinmode
+13.Mais sobre a biblioteca DallasTemperature
+http://forum.arduino.cc/index.php?topic=15494.0
+14.Exemplo conexão botão e led
+http://www.comofazerascoisas.com.br/projeto-arduino-led-com-botao-liga-desliga.html
+15.Exemplo conexão botão e led
+http://playground.arduino.cc/Portugues/LearningButton
+16.Exemplo conexão botão e led
+http://eletrao.blogspot.com.br/2012/02/botao-liga-o-led-botao-desliga-o-led.html
+17.Exemplo conexão botoes e led ledhttp://www.bosontreinamentos.com.br/eletronica/arduino/arduino-controlando-leds-com-um-botao-pushbutton
+
