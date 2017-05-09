@@ -13,11 +13,6 @@ class DSDetector{//Classe
 };
 
 //------------------------------METODOS---------------------------------------------------
-DSDetector::DSDetector(){//Contrutor
-}
-
-DSDetector::~DSDetector(){//Destrutor
-}
 
 bool DSDetector::sistemaEstado(const int led,const int botao){//Verifica se o sistema está ligado ou desligado
   int estadoBotao = digitalRead(botao);//verifica se botao esta ligado ou desligado

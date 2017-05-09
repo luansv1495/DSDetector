@@ -8,7 +8,7 @@
 //------------------------------CLASSE----------------------------------------------------
 class SensorTemperatura{//Classe
    public:
-      SensorTemperatura(int pino);//Contrutor recebendo parametro pino
+      SensorTemperatura();//Contrutor recebendo parametro pino
       ~SensorTemperatura();//Destrutor
       bool verificarSensorTemp(DallasTemperature sensors,DeviceAddress sensor1);//Verificar se o sensor de temperatura está conectado
       float getTempMin();//Pegar Temperatura Minima
@@ -19,21 +19,12 @@ class SensorTemperatura{//Classe
       void celsius(DallasTemperature sensors,DeviceAddress sensor1);//Pegar a temperatura do ambiente e inserir temperatura maxima, minima e atual
       void imprimirTemp(); //Imprimir informações adquiridas pelo sensor de temperatura
   private:
-      float tempMin;
-      float tempMax;
-      float tempAtual;
-      int pino;
+      float tempMin=999;
+      float tempMax=0;
+      float tempAtual=0;
 };
 
 //------------------------------METODOS---------------------------------------------------
-SensorTemperatura::SensorTemperatura(int pino){//Contrutor
-     this->pino = pino;//inseri o valor do pino que se encontra o sensor
-     tempMin=999;//inicia valor da temperatura minima e maxima
-      tempMax=0;
-}
-
-SensorTemperatura::~SensorTemperatura(){//Destrutor
-}
 
 float SensorTemperatura::getTempMin(){//Pegar Temperatura Minima
   return this->tempMin;//retorna valor da temperatura minima

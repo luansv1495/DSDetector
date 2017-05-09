@@ -30,5 +30,11 @@ http://www.comofazerascoisas.com.br/projeto-arduino-led-com-botao-liga-desliga.h
 http://playground.arduino.cc/Portugues/LearningButton
 16.Exemplo conexão botão e led
 http://eletrao.blogspot.com.br/2012/02/botao-liga-o-led-botao-desliga-o-led.html
-17.Exemplo conexão botoes e led ledhttp://www.bosontreinamentos.com.br/eletronica/arduino/arduino-controlando-leds-com-um-botao-pushbutton
-
+17.Exemplo conexão botoes e led
+http://www.bosontreinamentos.com.br/eletronica/arduino/arduino-controlando-leds-com-um-botao-pushbutton
+18.Datasheet sensor mq3
+https://www.sparkfun.com/datasheets/Sensors/MQ-3.pdf
+19.Exemplo de conexão mq3
+http://blog.filipeflop.com/sensores/bafometro-com-arduino.html?_ga=2.224364763.1980736805.1494352746-562701972.1494352667
+20.Exemplo de conexão mq3
+http://panamahitek.com/sensor-mq-3/
