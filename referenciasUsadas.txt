@@ -42,4 +42,31 @@ http://panamahitek.com/sensor-mq-3/
 https://multilogica-shop.com/content/analogread
 22.funçoes analogread,analogwrite e analogReference
 http://www.bosontreinamentos.com.br/eletronica/arduino/arduino-conhecendo-as-funcoes-analogread-analogwrite-e-analogreference/
+23. LCD exemplo
+http://blog.filipeflop.com/display/controlando-um-lcd-16x2-com-arduino.html
+24. datasheets shield
+https://www.dfrobot.com/wiki/index.php/Arduino_LCD_KeyPad_Shield_(SKU:_DFR0009)
+25.Exemplo LCD
+http://www.robotshop.com/media/files/PDF/wiki-dfr0009.pdf
+26.Exemplo  LCD
+https://www.youtube.com/watch?v=onDpyWKSJuI
 
+http://blog.filipeflop.com/display/controlando-um-lcd-16x2-com-arduino.html?_ga=2.195453292.196224589.1494387475-1602197068.1493609788
+
+http://www.arduinoecia.com.br/2013/03/display-lcd-winstar-wh1602a.html
+
+http://www.arduinoecia.com.br/2013/08/arduino-shield-lcd-16x2-com-keypad.html
+https://www.embarcados.com.br/arduino-saidas-pwm/
+
+http://blog.filipeflop.com/display/controlando-um-lcd-16x2-com-arduino.html
+http://blog.filipeflop.com/sensores/bafometro-com-arduino.html
+http://helpdev.com.br/2013/07/07/arduino-sensor-de-gas-detector-de-gas-arduino-mq-gas-sensor/
+http://arduinomais.blogspot.com.br/2014/07/shield-lcd-keypad.html
+
+
+https://www.arduino.cc/en/Reference/LiquidCrystalCreateChar
+http://labdegaragem.com/profiles/blogs/tutorial-lcd-com-arduino
+
+
+
+http://nets-nuts.com.br/pt/eletronica/liquidcrystal-h/
