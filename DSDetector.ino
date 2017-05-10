@@ -14,7 +14,7 @@
   const int pinoTemperatura = 13;//Pino Temperatura
   const int led = 11;//Pino Led
   const int botao = 12;//Pino Botão
-  const char pinoMQ3[] = "A15";
+  const int pinoMQ3 = 13;
     
 //------------------------------VARIAVEIS-------------------------------------------------
 
@@ -30,9 +30,12 @@
 void setup(){
   Serial.begin(9600);//iniciando porta serial na velocidade 9600 padrão de varios sensores
   sensors.begin();//iniciando a biblioteca DallasTemperature
+  sensorTemp = new SensorTemperatura();
+  sistemaMetodos = new DSDetector();
+  sensorMQ = new SensorMQ3();
   pinMode(led,OUTPUT);//definindo pino led como saida
   pinMode(botao,INPUT);//definindo pino botao como entrada
-  pinMode(A0,INPUT);
+  pinMode(pinoMQ3,INPUT);
   
   
 }
@@ -41,12 +44,10 @@ void setup(){
 void loop(){
   if(sistemaMetodos->sistemaEstado(led,botao)){//Verificar se o sistema está ligado
       if(sensorTemp->verificarSensorTemp(sensors,sensor1)){//se encontrar o sensor
-          // sensorTemp->celsius(sensors,sensor1);//chamada da função para obter temperaturas
-          // sensorTemp->imprimirTemp();//imprimir resultados da temperatura
-          // sensorMQ->imprimirMQ3();
-          //int pinoMQ3 = analogRead(A0);
-          //Serial.print(pinoMQ3);
-          sensorMQ->setPinoMQ3(pinoMQ3);
+           sensorTemp->celsius(sensors,sensor1);//chamada da função para obter temperaturas
+          sensorTemp->imprimirTemp();//imprimir resultados da temperatura
+          sensorMQ->sensorGas(pinoMQ3);
+          sensorMQ->imprimirMQ3();   
            delay(1000);// reexecutar a cada 1 segundo
        }else{//se não encontrar o sensor
             sensorTemp->setTempMax(0);//reseta valor maximo

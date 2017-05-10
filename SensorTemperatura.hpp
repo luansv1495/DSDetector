@@ -26,6 +26,10 @@ class SensorTemperatura{//Classe
 
 //------------------------------METODOS---------------------------------------------------
 
+SensorTemperatura::SensorTemperatura(){}
+
+SensorTemperatura::~SensorTemperatura(){}
+
 float SensorTemperatura::getTempMin(){//Pegar Temperatura Minima
   return this->tempMin;//retorna valor da temperatura minima
 }
@@ -48,11 +52,11 @@ void  SensorTemperatura::setTempMin(float tempMin){//Inserir Temperatura Minima
 
 bool SensorTemperatura::verificarSensorTemp(DallasTemperature sensors, DeviceAddress sensor1){//Verificar se o sensor de temperatura está conectado
   if(!sensors.getAddress(sensor1,0)){//Pesquisa se a sensor conectado caso não encontrar
-      Serial.println("Sensor de Temperatura nao encontrado!");
-      Serial.println();
+      //Serial.println("Sensor de Temperatura nao encontrado!");
+      //Serial.println();
       return false;//retorna falso caso não encontrar sensor
   }else{//Sensor encontrado
-      Serial.println("Sensor de Temperatura encontrado!");
+      //Serial.println("Sensor de Temperatura encontrado!");
       //Serial.println();
       return true;//retorna verdade caso encontrar o sensor
   } 
