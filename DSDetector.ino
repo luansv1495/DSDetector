@@ -47,7 +47,7 @@ void loop(){
            sensorTemp->celsius(sensors,sensor1);//chamada da função para obter temperaturas
           sensorTemp->imprimirTemp();//imprimir resultados da temperatura
           sensorMQ->sensorGas(pinoMQ3);
-          sensorMQ->imprimirMQ3();   
+           //sensorMQ->imprimirMQ3();   
            delay(1000);// reexecutar a cada 1 segundo
        }else{//se não encontrar o sensor
             sensorTemp->setTempMax(0);//reseta valor maximo

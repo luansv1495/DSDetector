@@ -38,3 +38,8 @@ https://www.sparkfun.com/datasheets/Sensors/MQ-3.pdf
 http://blog.filipeflop.com/sensores/bafometro-com-arduino.html?_ga=2.224364763.1980736805.1494352746-562701972.1494352667
 20.Exemplo de conexão mq3
 http://panamahitek.com/sensor-mq-3/
+21.AnalogRead()
+https://multilogica-shop.com/content/analogread
+22.funçoes analogread,analogwrite e analogReference
+http://www.bosontreinamentos.com.br/eletronica/arduino/arduino-conhecendo-as-funcoes-analogread-analogwrite-e-analogreference/
+
