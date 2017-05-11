@@ -86,11 +86,11 @@ void loop(){
            sensorMQ->sensorGas(pinoMQ3);
            sensorMQ->imprimirMQ3();   
            lcd.setCursor(0,0);
-           lcd.print("Temperatura: ");
+           lcd.print("Temperatura:");
            lcd.print((int)sensorTemp->getTempAtual());
-           lcd.print("C");
+           lcd.print(" C");
            lcd.setCursor(0,1);
-           lcd.print("MQ3: ");
+           lcd.print("MQ3:");
            lcd.print(sensorMQ->getVAtual());
            delay(1000);// reexecutar a cada 1 segundo
   }else{//Se o sitema estiver desligado
