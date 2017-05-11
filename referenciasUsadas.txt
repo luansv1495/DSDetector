@@ -70,3 +70,19 @@ http://labdegaragem.com/profiles/blogs/tutorial-lcd-com-arduino
 
 
 http://nets-nuts.com.br/pt/eletronica/liquidcrystal-h/
+
+
+http://blog.baudaeletronica.com.br/display-lcd-16x2-conhecendo-biblioteca-liquidcrystal/
+
+
+http://blog.baudaeletronica.com.br/display-lcd-16x2-conhecendo-biblioteca-liquidcrystal/
+
+buzzer
+http://www.bosontreinamentos.com.br/eletronica/arduino/arduino-tocando-sons-em-um-alto-falante-sketch-02/
+http://www.arduinoecia.com.br/2014/02/newtone-alternativa-biblioteca-tone-do.html
+https://bitbucket.org/teckel12/arduino-new-tone/wiki/Home
+
+http://www.arduinoecia.com.br/2013/06/sons-no-arduino.html
+
+rele 
+https://www.youtube.com/watch?v=JJd9_3caX1U

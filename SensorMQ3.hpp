@@ -2,7 +2,7 @@
 #define SENSORMQ3_HPP
 
 //------------------------------BIBLIOTECAS-----------------------------------------------
-  #include <string.h>
+
 //------------------------------CLASSE----------------------------------------------------
 class SensorMQ3{//Classe
    public:
@@ -27,7 +27,7 @@ SensorMQ3::SensorMQ3(){}
 SensorMQ3::~SensorMQ3(){}
 
 void SensorMQ3::sensorGas(int pinoMQ3){
-    int v1 = analogRead(A13);
+    int v1 = analogRead(A1);
     if(v1<this->vMin){//se o valor lido for menor que a temperatura minima
       this->vMin = v1;//insere a nova temperatura minima
     }
@@ -62,7 +62,7 @@ void SensorMQ3::setVMax(int vMax){
 }
 
 void SensorMQ3::imprimirMQ3(){
-     Serial.print("MQ3: ");
+   Serial.print("MQ3: ");
   Serial.print(getVAtual());//pega valor da temperatura atual
   Serial.print(" Min: ");
   Serial.print(getVMin());//pega valor da temperatura minima

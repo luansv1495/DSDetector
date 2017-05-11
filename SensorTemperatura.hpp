@@ -63,6 +63,7 @@ bool SensorTemperatura::verificarSensorTemp(DallasTemperature sensors, DeviceAdd
 }
 
 void SensorTemperatura::celsius(DallasTemperature sensors,DeviceAddress sensor1){//Pegar a temperatura do ambiente e inserir temperatura maxima, minima e atual
+    verificarSensorTemp(sensors,sensor1);
     sensors.requestTemperatures();//Metodo para obter a temperatura
     float tempCelsius = sensors.getTempC(sensor1);//Metodo para obter a temperatura em celsius
     if(tempCelsius<this->tempMin){//se o valor lido for menor que a temperatura minima

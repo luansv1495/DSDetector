@@ -12,6 +12,8 @@ class Lcd{//Classe
         void imprimirButton(LiquidCrystal lcd);
         int menuLCD(LiquidCrystal lcd);
         void carregar(LiquidCrystal lcd,int tempo);
+        void rolagemDireita(LiquidCrystal lcd);
+        void rolagemEsquerda(LiquidCrystal lcd);
   private:
     int pinoLcd;
     int button;
@@ -21,6 +23,19 @@ Lcd::Lcd(int pinoLcd){
   this->pinoLcd = pinoLcd;
   }
 Lcd::~Lcd(){}
+void Lcd::rolagemDireita(LiquidCrystal lcd){
+   for(int posicao = 0; posicao < 16; posicao++){
+      lcd.scrollDisplayRight();
+    delay(500);
+  }
+}
+
+void Lcd::rolagemEsquerda(LiquidCrystal lcd){
+ for (int posicao = 0; posicao < 16; posicao++){
+    lcd.scrollDisplayLeft();
+    delay(500);
+  }
+}
 
 int Lcd::escolhaButton(){
   button = analogRead(pinoLcd);
@@ -98,8 +113,7 @@ int Lcd::menuLCD(LiquidCrystal lcd){
    lcd.clear();
    lcd.setCursor(0,0);
    lcd.print("Menu Opcoes:");
-   carregar(lcd,100);  
-   
+   carregar(lcd,70);  
    do{
      lcd.setCursor(0,0);
      lcd.print(opcoes[v1]); 
@@ -107,14 +121,6 @@ int Lcd::menuLCD(LiquidCrystal lcd){
      lcd.print(opcoes[v2]);
      opcao = escolhaButton();
      delay(300);
-     Serial.print("v1:");
-      Serial.println(v1);
-      Serial.print("v2:");
-      Serial.println(v2);
-      Serial.print("cont:");
-      Serial.println(cont);
-      Serial.print("op:");
-      Serial.println(opcao);
      if(opcao == 1 || opcao == 2 || opcao == 5){
      if(opcao == 1 && cont==1){opcao = 2; cont = 0;}
      if(opcao == 2 && cont==2){opcao = 1; cont = 0;}
@@ -137,7 +143,7 @@ int Lcd::menuLCD(LiquidCrystal lcd){
    if(escolha==0){
        lcd.setCursor(0,0);
        lcd.print("Saindo do Menu");
-       carregar(lcd,525);
+       carregar(lcd,200);
    }else{
        lcd.setCursor(0,0);
        lcd.print("Wireless");
