@@ -14,8 +14,8 @@
 #include <NewTone.h> 
 
 //------------------------------PINOS-----------------------------------------------------
-  const int rele = 3;
-  const int buzzer = 4;
+  const int buzzer = 3;
+  const int rele = 10;
   const int led = 11;//Pino Led
   const int botao = 12;//Pino Botão
   const int pinoTemperatura = 13;//Pino Temperatura
@@ -40,7 +40,12 @@ byte Carregando[8] = {
   DSDetector *sistemaMetodos;//Criando ponteiro para metodos do sistema
   SensorMQ3 *sensorMQ;
   Lcd *tela;
-  LiquidCrystal lcd(9,10,5,6,7,8);//RS,EN,D4,D5,D6,D7
+  LiquidCrystal lcd(8,//d1
+                    9,//d0
+                    4,//d5
+                    5,//d4
+                    6,//d3
+                    7);//d2
   OneWire oneWire(pinoTemperatura);//Define uma instancia do oneWire para comunicacao com o sensor
   DallasTemperature sensors(&oneWire);//passando como referencia oneWire para DallasTemperature
   DeviceAddress sensor1;//Arrays para armazenar endereços de dispositivo(sensores)
@@ -60,6 +65,7 @@ void setup(){
   pinMode(rele,OUTPUT);
   pinMode(botao,INPUT);//definindo pino botao como entrada
   pinMode(pinoMQ3,INPUT);
+  digitalWrite(rele, HIGH);
   lcd.setCursor(2,0);
   lcd.print("Bem-vindo ao");
   lcd.setCursor(3,1);
@@ -72,18 +78,33 @@ void setup(){
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("Aquecendo sensor");
-  tela->carregar(lcd,100);//3594 ==57504
+  tela->carregar(lcd,3439);//5344
+  sensorTemp->celsius(sensors,sensor1);
+  sensorTemp->imprimirTemp();//imprimir resultados da temperatura
+  sensorMQ->sensorGas(pinoMQ3);
+  lcd.print(bebado(sensorMQ->getVAtual(),rele));
 }
 
 //------------------------------LOOP-----------------------------------------------------
 void loop(){
- lcd.clear();
   //tela->menuLCD(lcd);
  if(sistemaMetodos->sistemaEstado(led,botao)){//Verificar se o sistema está ligado
-           digitalWrite(rele, LOW);
+         lcd.clear();
+         lcd.setCursor(0,0);
+         lcd.print("Temperatura:");
+         lcd.print((int)sensorTemp->getTempAtual());
+         lcd.print(" C");
+         lcd.setCursor(0,1);
+         lcd.print("MQ3:");
+         lcd.print(sensorMQ->getVAtual());
+         delay(1000);
+        
+         if(tela->escolhaButton()==5){ //
+          lcd.clear();
            sensorTemp->celsius(sensors,sensor1);
            sensorTemp->imprimirTemp();//imprimir resultados da temperatura
            sensorMQ->sensorGas(pinoMQ3);
+          
            sensorMQ->imprimirMQ3();   
            lcd.setCursor(0,0);
            lcd.print("Temperatura:");
@@ -92,9 +113,18 @@ void loop(){
            lcd.setCursor(0,1);
            lcd.print("MQ3:");
            lcd.print(sensorMQ->getVAtual());
+           delay(1000);
+           lcd.clear();
+           lcd.setCursor(0,0);
+           lcd.print("Resultado:");
+           lcd.setCursor(0,1);
+           lcd.print(bebado(sensorMQ->getVAtual(),rele));
            delay(1000);// reexecutar a cada 1 segundo
-  }else{//Se o sitema estiver desligado
+         }
+         
        
+  }else{//Se o sitema estiver desligado
+       lcd.clear();
        lcd.setCursor(4,0);
        lcd.print("Sistema");
        lcd.setCursor(3,1);
@@ -103,6 +133,7 @@ void loop(){
        digitalWrite(rele, HIGH);
        delay(100);
        noNewTone(buzzer);
-       delay(2000);//reexecutar a cada 2 segundo
+       delay(1000);//reexecutar a cada 2 segundo
   }
+
 }

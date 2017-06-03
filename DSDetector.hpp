@@ -9,6 +9,7 @@ class DSDetector{//Classe
       DSDetector();//Contrutor
       ~DSDetector();//Destrutor
      bool sistemaEstado(int led,int botao);//Verificar se sitema esta desligado ou ligado
+     String bebado(int vAtual,int rele);
   private:
 };
 
@@ -28,6 +29,16 @@ bool DSDetector::sistemaEstado(const int led,const int botao){//Verifica se o si
       digitalWrite(led,LOW);//apagar o led
       return false;//retornar falso
   } 
+}
+
+String bebado(int vAtual,int rele){
+   if(vAtual >= 0 and vAtual <= 80){
+    digitalWrite(rele, LOW);
+    return "Voce nao bebeu...";
+  }else{
+    digitalWrite(rele, HIGH);
+   return "Voce esta bebado";
+  }
 }
 
 #endif
