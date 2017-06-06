@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.5)  6 JUN 2017 00:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.5)  6 JUN 2017 01:47
 entering extended mode
 **./Projeto.tex
 (Projeto.tex
@@ -1078,7 +1078,7 @@ LaTeX Info: Redefining \includegraphics on input line 38.
 LaTeX Font Warning: Font shape `T1/cmss/bx/n' in size <4> not available
 (Font)              size <5> substituted on input line 42.
 
-<figs/logoIFG.jpg, id=84, 373.6359pt x 133.4586pt>
+<figs/logoIFG.jpg, id=89, 373.6359pt x 133.4586pt>
 File: figs/logoIFG.jpg Graphic file (type jpg)
  <use figs/logoIFG.jpg>
 Package pdftex.def Info: figs/logoIFG.jpg used on input line 42.
@@ -1118,13 +1118,13 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 48.
 
 
 ]
-<figs/figura1.png, id=230, 645.16031pt x 252.945pt>
+<figs/figura1.png, id=240, 645.16031pt x 252.945pt>
 File: figs/figura1.png Graphic file (type png)
  <use figs/figura1.png>
 Package pdftex.def Info: figs/figura1.png used on input line 70.
 (pdftex.def)             Requested size: 227.62204pt x 89.24223pt.
 
-Overfull \vbox (6.61304pt too high) detected at line 70
+Overfull \vbox (13.34732pt too high) detected at line 70
  []
 
 File: figs/logoIFG.jpg Graphic file (type jpg)
@@ -1134,13 +1134,13 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 70.
  [4
 
  <./figs/figura1.png>]
-<figs/figura2.png, id=268, 645.16031pt x 252.945pt>
+<figs/figura2.png, id=279, 645.16031pt x 252.945pt>
 File: figs/figura2.png Graphic file (type png)
  <use figs/figura2.png>
 Package pdftex.def Info: figs/figura2.png used on input line 90.
 (pdftex.def)             Requested size: 199.16928pt x 78.08406pt.
 
-Overfull \vbox (9.05487pt too high) detected at line 90
+Overfull \vbox (15.78915pt too high) detected at line 90
  []
 
 File: figs/logoIFG.jpg Graphic file (type jpg)
@@ -1179,7 +1179,7 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 130.
 
 [9
 
-] <figs/tabela4.png, id=445, 617.30624pt x 115.18031pt>
+] <figs/tabela4.png, id=461, 617.30624pt x 115.18031pt>
 File: figs/tabela4.png Graphic file (type png)
 
 <use figs/tabela4.png>
@@ -1192,7 +1192,7 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 143.
  [10
 
  <./figs/tabela4.png>]
-<figs/interface.png, id=481, 590.95781pt x 347.04657pt>
+<figs/interface.png, id=498, 590.95781pt x 347.04657pt>
 File: figs/interface.png Graphic file (type png)
 
 <use figs/interface.png>
@@ -1205,19 +1205,19 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 154.
  [11
 
  <./figs/interface.png>]
-<figs/imagem10.png, id=517, 499.11469pt x 254.45062pt>
+<figs/imagem10.png, id=535, 499.11469pt x 254.45062pt>
 File: figs/imagem10.png Graphic file (type png)
  <use figs/imagem10.png>
 Package pdftex.def Info: figs/imagem10.png used on input line 167.
 (pdftex.def)             Requested size: 170.71652pt x 87.03233pt.
 
-<figs/imagem11.png, id=518, 861.9703pt x 423.83344pt>
+<figs/imagem11.png, id=536, 861.9703pt x 423.83344pt>
 File: figs/imagem11.png Graphic file (type png)
  <use figs/imagem11.png>
 Package pdftex.def Info: figs/imagem11.png used on input line 167.
-(pdftex.def)             Requested size: 128.0374pt x 62.95142pt.
+(pdftex.def)             Requested size: 113.81102pt x 55.9604pt.
 
-Overfull \vbox (16.3259pt too high) detected at line 167
+Overfull \vbox (16.06917pt too high) detected at line 167
  []
 
 File: figs/logoIFG.jpg Graphic file (type jpg)
@@ -1227,7 +1227,7 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 167.
  [12
 
  <./figs/imagem10.png> <./figs/imagem11.png>]
-<figs/git.png, id=555, 913.4125pt x 381.425pt>
+<figs/git.png, id=574, 913.4125pt x 381.425pt>
 File: figs/git.png Graphic file (type png)
  <use figs/git.png>
 Package pdftex.def Info: figs/git.png used on input line 178.
@@ -1254,7 +1254,7 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 195.
 (pdftex.def)             Requested size: 42.67912pt x 15.24457pt.
  [15
 
-] <figs/github.jpg, id=656, 338.01282pt x 96.36pt>
+] <figs/github.jpg, id=678, 338.01282pt x 96.36pt>
 File: figs/github.jpg Graphic file (type jpg)
 
 <use figs/github.jpg>
@@ -1282,13 +1282,13 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 236.
  [18
 
 ]
-<figs/imagem12.png, id=757, 3059.43pt x 2287.79718pt>
+<figs/imagem12.png, id=782, 3059.43pt x 2287.79718pt>
 File: figs/imagem12.png Graphic file (type png)
  <use figs/imagem12.png>
 Package pdftex.def Info: figs/imagem12.png used on input line 249.
 (pdftex.def)             Requested size: 227.62204pt x 170.18103pt.
 
-Overfull \vbox (35.52318pt too high) detected at line 249
+Overfull \vbox (42.25746pt too high) detected at line 249
  []
 
 File: figs/logoIFG.jpg Graphic file (type jpg)
@@ -1298,7 +1298,7 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 249.
  [19
 
  <./figs/imagem12.png>]
-<figs/imagem17.jpg, id=797, 1204.5pt x 855.195pt>
+<figs/imagem17.jpg, id=823, 1204.5pt x 855.195pt>
 File: figs/imagem17.jpg Graphic file (type jpg)
  <use figs/imagem17.jpg>
 Package pdftex.def Info: figs/imagem17.jpg used on input line 261.
@@ -1309,7 +1309,7 @@ en already used, duplicate ignored
                    \relax 
 l.261 }
        
-Overfull \vbox (26.94354pt too high) detected at line 261
+Overfull \vbox (33.67783pt too high) detected at line 261
  []
 
 File: figs/logoIFG.jpg Graphic file (type jpg)
@@ -1319,18 +1319,18 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 261.
  [20
 
  <./figs/imagem17.jpg>]
-<figs/imagem18.png, id=833, 606.76688pt x 414.79968pt>
+<figs/imagem18.png, id=860, 606.76688pt x 414.79968pt>
 File: figs/imagem18.png Graphic file (type png)
  <use figs/imagem18.png>
 Package pdftex.def Info: figs/imagem18.png used on input line 272.
-(pdftex.def)             Requested size: 256.0748pt x 175.0628pt.
+(pdftex.def)             Requested size: 247.53888pt x 169.22717pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig6}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.272 }
        
-Overfull \vbox (40.40495pt too high) detected at line 272
+Overfull \vbox (41.3036pt too high) detected at line 272
  []
 
 File: figs/logoIFG.jpg Graphic file (type jpg)
@@ -1347,12 +1347,12 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 281.
 
 [22
 
-] <figs/imagem14.png, id=906, 250.68657pt x 152.82094pt>
+] <figs/imagem14.png, id=935, 250.68657pt x 152.82094pt>
 File: figs/imagem14.png Graphic file (type png)
 
 <use figs/imagem14.png>
 Package pdftex.def Info: figs/imagem14.png used on input line 292.
-(pdftex.def)             Requested size: 227.62204pt x 138.76643pt.
+(pdftex.def)             Requested size: 199.16928pt x 121.42209pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig6}) has be
 en already used, duplicate ignored
 <to be read again> 
@@ -1374,18 +1374,18 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 301.
  [24
 
 ]
-<figs/setup2.png, id=979, 380.17032pt x 396.7322pt>
+<figs/setup2.png, id=1010, 380.17032pt x 396.7322pt>
 File: figs/setup2.png Graphic file (type png)
  <use figs/setup2.png>
 Package pdftex.def Info: figs/setup2.png used on input line 311.
-(pdftex.def)             Requested size: 184.9429pt x 193.00208pt.
+(pdftex.def)             Requested size: 162.18062pt x 169.2476pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig6}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.311 }
        
-Overfull \vbox (28.80025pt too high) detected at line 311
+Overfull \vbox (11.78006pt too high) detected at line 311
  []
 
 File: figs/logoIFG.jpg Graphic file (type jpg)
@@ -1402,18 +1402,18 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 321.
  [26
 
 ]
-<figs/setup1.png, id=1054, 608.2725pt x 421.575pt>
+<figs/setup1.png, id=1087, 608.2725pt x 421.575pt>
 File: figs/setup1.png Graphic file (type png)
  <use figs/setup1.png>
 Package pdftex.def Info: figs/setup1.png used on input line 330.
-(pdftex.def)             Requested size: 270.30118pt x 187.33975pt.
+(pdftex.def)             Requested size: 241.84842pt x 167.61707pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig6}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.330 }
        
-Overfull \vbox (23.13792pt too high) detected at line 330
+Overfull \vbox (10.14952pt too high) detected at line 330
  []
 
 File: figs/logoIFG.jpg Graphic file (type jpg)
@@ -1423,7 +1423,7 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 330.
  [27
 
  <./figs/setup1.png>]
-<figs/imagem16.png, id=1091, 368.1253pt x 130.98938pt>
+<figs/imagem16.png, id=1125, 368.1253pt x 130.98938pt>
 File: figs/imagem16.png Graphic file (type png)
  <use figs/imagem16.png>
 Package pdftex.def Info: figs/imagem16.png used on input line 343.
@@ -1449,19 +1449,19 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 351.
  [29
 
 ]
-<figs/imagem13.png, id=1163, 555.57562pt x 347.79938pt>
+<figs/imagem13.png, id=1199, 555.57562pt x 347.79938pt>
 File: figs/imagem13.png Graphic file (type png)
 
 <use figs/imagem13.png>
 Package pdftex.def Info: figs/imagem13.png used on input line 361.
-(pdftex.def)             Requested size: 284.52756pt x 178.1183pt.
+(pdftex.def)             Requested size: 261.76526pt x 163.86905pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig6}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.361 }
        
-Overfull \vbox (13.91647pt too high) detected at line 361
+Overfull \vbox (6.4015pt too high) detected at line 361
  []
 
 File: figs/logoIFG.jpg Graphic file (type jpg)
@@ -1486,7 +1486,7 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 383.
  [32
 
 ]
-<figs/tabela1.png, id=1266, 970.3753pt x 116.68594pt>
+<figs/tabela1.png, id=1306, 970.3753pt x 116.68594pt>
 File: figs/tabela1.png Graphic file (type png)
  <use figs/tabela1.png>
 Package pdftex.def Info: figs/tabela1.png used on input line 395.
@@ -1508,7 +1508,7 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 395.
  [33
 
  <./figs/tabela1.png>]
-<figs/tabela3.png, id=1300, 573.64313pt x 115.18031pt>
+<figs/tabela3.png, id=1341, 573.64313pt x 115.18031pt>
 File: figs/tabela3.png Graphic file (type png)
  <use figs/tabela3.png>
 Package pdftex.def Info: figs/tabela3.png used on input line 407.
@@ -1526,7 +1526,7 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 407.
  [34
 
  <./figs/tabela3.png>]
-<figs/tabela2.png, id=1333, 873.2625pt x 117.43875pt>
+<figs/tabela2.png, id=1375, 873.2625pt x 117.43875pt>
 File: figs/tabela2.png Graphic file (type png)
  <use figs/tabela2.png>
 Package pdftex.def Info: figs/tabela2.png used on input line 420.
@@ -1548,6 +1548,54 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 420.
  [35
 
  <./figs/tabela2.png>]
+File: figs/logoIFG.jpg Graphic file (type jpg)
+ <use figs/logoIFG.jpg>
+Package pdftex.def Info: figs/logoIFG.jpg used on input line 437.
+(pdftex.def)             Requested size: 42.67912pt x 15.24457pt.
+
+[36
+
+ <C:/Users/MRafael/AppData/Local/Programs/MiKTeX 2.9/tex/latex/beamer/base/art/
+beamericonarticle.pdf>]
+File: figs/logoIFG.jpg Graphic file (type jpg)
+ <use figs/logoIFG.jpg>
+Package pdftex.def Info: figs/logoIFG.jpg used on input line 449.
+(pdftex.def)             Requested size: 42.67912pt x 15.24457pt.
+ [37
+
+]
+Overfull \vbox (8.7581pt too high) detected at line 463
+ []
+
+File: figs/logoIFG.jpg Graphic file (type jpg)
+<use figs/logoIFG.jpg>
+Package pdftex.def Info: figs/logoIFG.jpg used on input line 463.
+(pdftex.def)             Requested size: 42.67912pt x 15.24457pt.
+ [38
+
+]
+File: figs/logoIFG.jpg Graphic file (type jpg)
+ <use figs/logoIFG.jpg>
+Package pdftex.def Info: figs/logoIFG.jpg used on input line 477.
+(pdftex.def)             Requested size: 42.67912pt x 15.24457pt.
+ [39
+
+]
+File: figs/logoIFG.jpg Graphic file (type jpg)
+ <use figs/logoIFG.jpg>
+Package pdftex.def Info: figs/logoIFG.jpg used on input line 491.
+(pdftex.def)             Requested size: 42.67912pt x 15.24457pt.
+
+[40
+
+]
+File: figs/logoIFG.jpg Graphic file (type jpg)
+ <use figs/logoIFG.jpg>
+Package pdftex.def Info: figs/logoIFG.jpg used on input line 502.
+(pdftex.def)             Requested size: 42.67912pt x 15.24457pt.
+ [41
+
+]
 \tf@nav=\write6
 \openout6 = `Projeto.nav'.
 
@@ -1557,13 +1605,13 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 420.
 \tf@snm=\write8
 \openout8 = `Projeto.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 424.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 424.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 505.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 505.
  (Projeto.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 424.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 424.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 505.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 505.
 Package rerunfilecheck Info: File `Projeto.out' has not changed.
-(rerunfilecheck)             Checksum: 2FC608A0A7354D6F86E8D4C7C4BD8AA0;801.
+(rerunfilecheck)             Checksum: F96345DD2E452F1E173274D65EF6E8FE;867.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1572,30 +1620,32 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 424.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 505.
  ) 
 Here is how much of TeX's memory you used:
- 17981 strings out of 493334
- 348839 string characters out of 3129357
- 418868 words of memory out of 3000000
- 20939 multiletter control sequences out of 15000+200000
- 21062 words of font info for 59 fonts, out of 3000000 for 9000
+ 18079 strings out of 493334
+ 350601 string characters out of 3129357
+ 419259 words of memory out of 3000000
+ 21007 multiletter control sequences out of 15000+200000
+ 22703 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,23n,70p,419b,669s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
-0\ecsx1200.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
-pen\ec\dpi600\ecsx0500.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ecss1000.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2
-.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss0900.pk> <C:\Users\MRafael\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx0800.pk> <C:\Users\MRafae
-l\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss0800.pk> <C:\
-Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1
-095.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
-dpi600\ecss1440.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
-jknappen\ec\dpi600\ecsx0600.pk>
-Output written on Projeto.pdf (35 pages, 2082473 bytes).
+0\ecsi0800.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
+pen\ec\dpi600\ecsi1095.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx0500.pk> <C:\Users\MRafael\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1000.pk> <C:\Users\MRafae
+l\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss0900.pk> <C:\
+Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx0
+800.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
+dpi600\ecss0800.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
+jknappen\ec\dpi600\ecss1095.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\jknappen\ec\dpi600\ecss1440.pk> <C:\Users\MRafael\AppData\Local\MiK
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx0600.pk>
+Output written on Projeto.pdf (41 pages, 2170084 bytes).
 PDF statistics:
- 1696 PDF objects out of 1728 (max. 8388607)
- 90 named destinations out of 1000 (max. 500000)
- 297 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2059 PDF objects out of 2073 (max. 8388607)
+ 118 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
