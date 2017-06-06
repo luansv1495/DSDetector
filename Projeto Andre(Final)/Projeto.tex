@@ -1,0 +1,374 @@
+
+% Aspas duplas: ``''
+%
+%	\begin{figure}
+%		\centering
+%			\includegraphics[width=6cm]{figs/figura}
+%		\label{fig:figura1}
+%	\end{figure}
+
+%\documentclass[notes=only]{beamer} % Descomente aqui para compilar apenas as notas
+\documentclass{beamer} % Descomente aqui para compilar apenas os slides
+\usepackage[brazilian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{beamerthemesplit}
+\usepackage{graphics,epsfig, subfigure}
+\usepackage{url}
+\usepackage{graphicx}
+\bibliographystyle{plain}
+\mode<presentation> {
+	\usetheme{Warsaw}
+  \usecolortheme{rose}
+  \usefonttheme{professionalfonts}
+  \setbeamertemplate{footline}[frame number]
+  
+}
+\bibliography{referencia}
+
+\logo{\includegraphics[width=1.5cm]{figs/logoIFG}} % Adiciona o logo do INF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title [DSD] {Detector de concentração de álcool com base em Arduíno} %[Título reduzido]{Título estendido} - Título reduzido fica no rodapé do slide inicial
+\author[Maycon Rafael C. Borba, Luan Viana e Lisandro Almeida]{Lisandro Almeida, Luan Viana e Maycon Borba}
+ 
+ %[Autor reduzido]{Autor estendido} - Autor reduzido fica no rodapé do slide inicial
+\institute[IFGoiano]{Instituto Federal Goiano - Campus Rio Verde}
+\date{\today}
+\bibliographystyle{plain}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+	\titlepage
+}
+	
+\begin{frame}[allowframebreaks]
+	\frametitle{Sumário}
+	\tableofcontents
+	
+\end{frame}
+%\frame {
+%	\frametitle{Sumário}
+%	\tableofcontents
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introdução}
+\frame {
+\frametitle{Introdução}
+
+	\begin{itemize}
+		\item Junto com o desenvolvimento da economia, mais pessoas têm carros e por isso, mais carros
+aparecem nas estradas.
+Só no ano de 2016 foram 216.262 acidentes dos quais 7.619 foram por ingestão de álcool. 
+		\begin{figure}[!htb]
+		\includegraphics[width=8cm]{figs/figura1}
+		\centering % centralizada
+		\caption{Total de Acidentes em 2016}
+		\label{fig1}
+		\end{figure}
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Introdução}
+
+	\begin{itemize}
+		\item Muitos motoristas ignoram o perigo de dirigir depois de beber. A forma mais precisa de
+determinar se o motorista ingeriu ou não bebida alcoolica é a detecção das quantidades de
+álcool no sangue, que pode ser obtido através do exame de sangue, respiração, saliva e urina. 
+		\begin{figure}[!htb]
+		\includegraphics[width=7cm]{figs/figura2}
+		\centering % centralizada
+		\caption{Tipos dos Acidentes Causados Por Ingestão de Alcool.
+}
+		\label{fig2}
+		\end{figure}
+\end{itemize}
+	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objetivo}
+
+\frame {
+\frametitle{Objetivo}
+
+	\begin{itemize}
+				\item O objetivo deste trabalho é elaborar um sistema embarcado para detecção de concentração de álcool baseado no Arduino, que futuramemte possa ser implantado em um veículo para que apenas se locomova caso o motorista não esteja sobre efeito de alcool, assim evitando um possível acidente.
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fundamentação teórica}
+\subsection{Lei Nº 11.705}
+\frame {
+\frametitle{Lei Nº 11.705 (Lei Seca)}
+	\begin{itemize}
+	\item Está lei altera a Lei no 9.503, de 23 de setembro de 1997, e a Lei no 9.294, de 15 de julho de 1996, nos termos do § 4º do art. 220 da Constituição Federal, para inibir o consumo de bebida alcoólica por condutor de veículo automotor, e dá outras providências. 
+	\end{itemize}	
+}
+\note{
+	que ?institui o Código de Trânsito Brasileiro?\\
+	que dispõe sobre as restrições ao uso e à propaganda de produtos fumígeros, bebidas alcoólicas, medicamentos, terapias e defensivos agrícolas\\
+}
+\frame {
+\frametitle{Punição}
+	\begin{itemize}
+	\item De acordo com a nova legislação, o motorista que for flagrado com nível de álcool acima do permitido (0,1 mg/l de sangue) terá que pagar uma multa de R\$ 2.934,70 eterá a carteira de habilitação suspensa pelo prazo de 12 meses.
+	\item O pior é para quem estiver embriagado (níveis acima de 0,3 mg/l): o motorista corre o risco de ser preso, e a detenção é de 6 meses a 1 ano. 
+	\end{itemize}	
+}
+\note{
+}
+\frame {
+\frametitle{Tempo para poder dirigir}
+	\begin{itemize}
+	\item Tempo em média o álcool leva para desaparecer do organismo:
+	\begin{figure}[!htb]
+		\includegraphics[width=9cm]{figs/tabela4}
+		\centering % centralizada
+		\end{figure}
+	\item A margem de erro do bafômetro, segundo o Inmetro, é de apenas 1 \%. 
+	\end{itemize}	
+}
+\note{
+}
+\subsection{Arduino IDE}
+\frame {
+\frametitle{Arduino IDE}
+		 \begin{figure}[!htb]
+		\includegraphics[width=9cm]{figs/interface}
+		\centering % centralizada
+		\end{figure}
+		
+}
+\note{
+explicar conexão com a placa, e sobre usar uma derivação do c++;
+}
+\subsection{Hardware Arduino}
+\frame {
+\frametitle{Hardware Arduino}
+			 \begin{figure}[!htb]
+		\includegraphics[width=6cm]{figs/imagem10}
+		\caption{Arduino.cc}
+		\includegraphics[width=5.5cm]{figs/imagem11}
+		\centering % centralizada
+		\end{figure}
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Metodologia}
+\frame {
+\frametitle{Metodologia}
+
+	\begin{itemize}
+		\item Produção de um bafômetro controlado pela plataforma Arduino;
+		\item Realização de medições de concentrações de álcool no ar com uma boa aproximação
+dos valores reais das concentrações;
+		\item Exibir o valor adquirido em um Display de Cristal Líquido;
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Drive Safe Detector(DSDetector)}
+\frame {
+\frametitle{Drive Safe Detector}
+	 \begin{itemize}
+		\item O DSDetector, um sistema embarcado projetado em c++, utiliza o paradigma de programação orientado a objetos, feito totalmente na plataforma Arduino. Ele é composto por dois periféricos de entrada, Sensor de gás MQ-3 e sensor de Temperatura, três periféricos de saída, Display Lcd, Buzzer Beep e Led Vermelho, e demais componentes.
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Esquema do sistema}
+\frame {
+\frametitle{Esquema Parte 1}
+	 \begin{figure}[!htb]
+		\includegraphics[width=8cm]{figs/imagem12}
+		\raggedright
+		\caption{Esquema do sistema}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+
+\frame {
+\frametitle{Esquema Parte 2}
+	 \begin{figure}[!htb]
+		\includegraphics[width=8cm]{figs/imagem17}
+		\raggedright
+		\caption{Esquema do sistema}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+\subsection{Diagrama UML}
+\frame {
+\frametitle{UML}
+	 \begin{figure}[!htb]\raggedright
+	 	\includegraphics[width=10cm]{figs/imagem18}
+		\caption{Diagrama UML}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Drive Safe Detector Funcionamento Parte 1}
+	 \begin{itemize}
+		\item O DSDetector, será acoplado a um veículo tendo como fonte de alimentação a bateria do veículo com tensão de 12v a qual será regulada, a partir da montagen do sistema no veículo ele será ligado, ficando em funcionamento por tempo inderteminado, caso o motorista deslige o sistema ele não poderá dar partida no veículo e o sistema acionara o Buzzer Beep.
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Funcionamento}
+\frame {
+\frametitle{Funcionamento Parte 1}
+	 \begin{figure}[!htb]
+		\includegraphics[width=8cm]{figs/imagem14}
+		\label{fig6}
+	\end{figure}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Funcionamento Parte 2}
+	 \begin{itemize}
+		\item Assim que ligado, o sistema terá um tempo para entrar em operação, devido ao sensor MQ-3 que precisa ser aquecido, tempo o qual irá variar de acordo com a temperatura ambiente, após a inicialização o sistema estará em funcionamento total.
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 12 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Funcionamento Parte 2}
+	 \begin{figure}[!htb]
+		\includegraphics[width=6.5cm]{figs/setup2}
+		\label{fig6}
+	\end{figure}	
+}
+\note{
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 13 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Funcionamento Parte 3}
+	 \begin{itemize}
+		\item Logo após a inicialização do sistema vai entrar em modo de espera até que o motorista aperte o botão select, então o sistema fará a primeira leitura de concentração de alcool na respiração do motorista e a temperatura ambiente.
+\end{itemize}	
+}
+\note{
+}
+\frame {
+\frametitle{Funcionamento Parte 3}
+	 \begin{figure}[!htb]
+		\includegraphics[width=9.5cm]{figs/setup1}
+		\label{fig6}
+	\end{figure}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 15 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Funcionamento Parte 4}
+	 \begin{itemize}
+		\item O sistema irá ficar verificando se o motorista ingeriu alcool ou não, caso motorista tenha ingerido alcool o sistema não irá permitir que o motorista ligue o veículo.
+\end{itemize}	
+\begin{figure}[!htb]
+		\includegraphics[width=9.8cm]{figs/imagem16}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+\frame {
+\frametitle{Funcionamento Parte 5}
+	 \begin{itemize}
+		\item Logo após a primeira verificação o sistema irá rodar em segundo plano, verificando se à alcool no ambiente e lendo a temperatura para ajustar com a detecção de alcool no ambiente.
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 14 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Funcionamento Parte 5}
+	 \begin{figure}[!htb]
+		\includegraphics[width=10cm]{figs/imagem13}
+		\label{fig6}
+	\end{figure}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 16 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resultados}
+\frame {
+\frametitle{Metodologia dos Testes}
+	 \begin{itemize}
+		\item Foram feitas coletas de dados de acordo com os seguintes intervalos de temperatura, temperatura menor ou igual a 19ºC, maior que 19ºC e menor que 27ºC e maior ou igual a 27ºC, intervalos os quais foram verificados mudanças na coleta do sensor MQ-3. 
+\end{itemize}	
+}
+\note{
+}
+\frame {
+\frametitle{Fórmula}
+	 \begin{itemize}
+		\item BAC(em mg/L)=BrAc(em mg/L)*FATOR. 
+		\item BAC = é a concentração de álcool no sangue.
+		\item BrAc = é a concentração de álcool na
+respiração.
+		\item FATOR = varia de país para país no caso do Brasil é 0,3.
+\end{itemize}	
+}
+\note{
+}
+\frame {
+\frametitle{Tabela 1}
+	 \begin{itemize}
+		\item Valores do sensor MQ-3 de acordo com cada faixa de temperatura, logo após o aquecimento do sensor MQ-3. 
+\end{itemize}	
+\begin{figure}[!htb]
+		\includegraphics[width=11cm]{figs/tabela1}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+\frame {
+\frametitle{Tabela 2}
+	 \begin{itemize}
+		\item Depois da detecção de álcool o sensor MQ-3 demora um certo tempo para restabelecer seus valores normais, o ppm abaixa rapidamente até um certo ponto depois vai abaixando de forma despadronizada com tempo indefinido para restabelecer o valor inicial.
+\end{itemize}	
+\begin{figure}[!htb]
+		\includegraphics[width=10cm]{figs/tabela3}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+
+\frame {
+\frametitle{Tabela 3}
+	 \begin{itemize}
+		\item Depois da detecção de álcool no sensor MQ-3 e a espera para o mesmo se restabelecer o codigo sofre alteração devido a forma despadronizada para a volta do valor inicial, sendo agora os valores para detecção alterados.
+\end{itemize}	
+\begin{figure}[!htb]
+		\includegraphics[width=11cm]{figs/tabela2}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

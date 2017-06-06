@@ -9,8 +9,12 @@ class DSDetector{//Classe
       DSDetector();//Contrutor
       ~DSDetector();//Destrutor
      bool sistemaEstado(int led,int botao);//Verificar se sitema esta desligado ou ligado
-     String bebado(int vAtual,int rele);
+     int getValorAjuste();
+     String bebado(int vAtual,int rele,int varianca,int vMax);
+     void ajuste(int varianca,int vMax);
+     
   private:
+  int valorAjuste = 0;
 };
 
 //------------------------------METODOS---------------------------------------------------
@@ -18,6 +22,10 @@ DSDetector::DSDetector(){//Contrutor
 }
 
 DSDetector::~DSDetector(){//Destrutor
+}
+
+int DSDetector::getValorAjuste(){
+  return valorAjuste;
 }
 
 bool DSDetector::sistemaEstado(const int led,const int botao){//Verifica se o sistema está ligado ou desligado
@@ -31,13 +39,34 @@ bool DSDetector::sistemaEstado(const int led,const int botao){//Verifica se o si
   } 
 }
 
-String bebado(int vAtual,int rele){
-   if(vAtual >= 0 and vAtual <= 80){
-    digitalWrite(rele, LOW);
-    return "Voce nao bebeu...";
+void DSDetector::ajuste(int varianca,int vMax){
+  if(vMax<=160){
+    if(varianca <=19){
+      valorAjuste = 75;
+    }else if(varianca>19 and varianca<27){
+      valorAjuste = 65;
+    }else{
+      valorAjuste = 90;
+    }
   }else{
-    digitalWrite(rele, HIGH);
-   return "Voce esta bebado";
+     if(varianca <=19){
+        valorAjuste = 79;
+    }else if(varianca>19 and varianca<27){
+        valorAjuste = 84;
+    }else{
+        valorAjuste = 104;
+    }
+  }
+}
+
+String DSDetector::bebado(int vAtual,int rele,int varianca,int vMax){
+  ajuste(varianca,vMax);
+  if(vAtual <= getValorAjuste()){
+     digitalWrite(rele, LOW);
+      return "Voce nao bebeu...";
+   }else{
+      digitalWrite(rele, HIGH);// desliga o veiculo
+      return "Voce esta bebado";
   }
 }
 

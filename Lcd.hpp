@@ -10,10 +10,7 @@ class Lcd{//Classe
        ~Lcd();//Destrutor
         int escolhaButton();
         void imprimirButton(LiquidCrystal lcd);
-        int menuLCD(LiquidCrystal lcd);
         void carregar(LiquidCrystal lcd,int tempo);
-        void rolagemDireita(LiquidCrystal lcd);
-        void rolagemEsquerda(LiquidCrystal lcd);
   private:
     int pinoLcd;
     int button;
@@ -22,20 +19,8 @@ class Lcd{//Classe
 Lcd::Lcd(int pinoLcd){
   this->pinoLcd = pinoLcd;
   }
+  
 Lcd::~Lcd(){}
-void Lcd::rolagemDireita(LiquidCrystal lcd){
-   for(int posicao = 0; posicao < 16; posicao++){
-      lcd.scrollDisplayRight();
-    delay(500);
-  }
-}
-
-void Lcd::rolagemEsquerda(LiquidCrystal lcd){
- for (int posicao = 0; posicao < 16; posicao++){
-    lcd.scrollDisplayLeft();
-    delay(500);
-  }
-}
 
 int Lcd::escolhaButton(){
   button = analogRead(pinoLcd);
@@ -91,66 +76,12 @@ void Lcd::imprimirButton(LiquidCrystal lcd){
 }
 
 void Lcd::carregar(LiquidCrystal lcd,int tempo){
-  for(int i=0;i<=16;i++){
+  for(int i=0;i<16;i++){
         lcd.setCursor(i,1);
         lcd.write(byte(0));
         delay(tempo);
     }
      lcd.clear();
-}
-
-
-int Lcd::menuLCD(LiquidCrystal lcd){
-  int menu=1,v1=0,escolha=0,v2=1,cont=1,opcao;
-  String opcoes[2];
-   opcoes[0] = "0 - Sair."; 
-   opcoes[1] = "1 - Wireless."; 
-   lcd.clear();
-   lcd.print("Teclas menu:");
-   lcd.setCursor(0,1);
-   lcd.print("Up,Down,Select");
-   delay(2700);
-   lcd.clear();
-   lcd.setCursor(0,0);
-   lcd.print("Menu Opcoes:");
-   carregar(lcd,70);  
-   do{
-     lcd.setCursor(0,0);
-     lcd.print(opcoes[v1]); 
-     lcd.setCursor(0,1);
-     lcd.print(opcoes[v2]);
-     opcao = escolhaButton();
-     delay(300);
-     if(opcao == 1 || opcao == 2 || opcao == 5){
-     if(opcao == 1 && cont==1){opcao = 2; cont = 0;}
-     if(opcao == 2 && cont==2){opcao = 1; cont = 0;}
-     if(opcao==1){
-        v1=0;
-        v2=1;
-        cont=1;
-     }else if(opcao==2){
-        v1=1;
-        v2=0;
-        cont=2;
-     }else if(opcao==5){
-       escolha= v2;
-       menu=0;
-     }
-     lcd.clear();
-     
-     }
-  }while(menu!=0);
-   if(escolha==0){
-       lcd.setCursor(0,0);
-       lcd.print("Saindo do Menu");
-       carregar(lcd,200);
-   }else{
-       lcd.setCursor(0,0);
-       lcd.print("Wireless");
-       delay(525);
-       lcd.clear();
-   }
-  delay(250);
 }
 #endif
 

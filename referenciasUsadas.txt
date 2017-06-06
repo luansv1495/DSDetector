@@ -86,3 +86,18 @@ http://www.arduinoecia.com.br/2013/06/sons-no-arduino.html
 
 rele 
 https://www.youtube.com/watch?v=JJd9_3caX1U
+
+https://github.com/e-radionicacom/e-radionica.com-Fritzing-Library-parts-
+
+https://github.com/e-radionicacom/e-radionica.com-Fritzing-Library-parts-/blob/master/MQ-3%20breakout%20.fzpz
+
+https://github.com/RafaGS/Fritzing/blob/master/LCD%20Keypad%20Shield.fzpz
+
+
+
+https://www.arduino.cc/en/main/arduinoBoardMega2560
+
+
+http://1.bp.blogspot.com/-VVU8cqB2GWU/Tn1A-LnjAYI/AAAAAAAABiw/eH8KkZ8ZZig/s1600/esquema+eletrico.jpg
+
+http://www.proeletro.com.br/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/1/0/10a.jpeg

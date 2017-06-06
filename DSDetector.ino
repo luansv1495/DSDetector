@@ -6,7 +6,7 @@
 //------------------------------BIBLIOTECAS-----------------------------------------------
 #include "SensorTemperatura.hpp"
 #include "SensorMQ3.hpp"
-#include "DSDetector.hpp"
+#include "Sistem.hpp"
 #include "Lcd.hpp"
 #include <OneWire.h>
 #include <DallasTemperature.h>
@@ -78,33 +78,24 @@ void setup(){
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("Aquecendo sensor");
-  tela->carregar(lcd,3439);//5344
   sensorTemp->celsius(sensors,sensor1);
-  sensorTemp->imprimirTemp();//imprimir resultados da temperatura
-  sensorMQ->sensorGas(pinoMQ3);
-  lcd.print(bebado(sensorMQ->getVAtual(),rele));
-}
-
-//------------------------------LOOP-----------------------------------------------------
-void loop(){
-  //tela->menuLCD(lcd);
- if(sistemaMetodos->sistemaEstado(led,botao)){//Verificar se o sistema está ligado
-         lcd.clear();
-         lcd.setCursor(0,0);
-         lcd.print("Temperatura:");
-         lcd.print((int)sensorTemp->getTempAtual());
-         lcd.print(" C");
-         lcd.setCursor(0,1);
-         lcd.print("MQ3:");
-         lcd.print(sensorMQ->getVAtual());
-         delay(1000);
-        
-         if(tela->escolhaButton()==5){ //
-          lcd.clear();
+  if(sensorTemp->getTempAtual()<=19){
+    tela->carregar(lcd,7500);//2min
+  }else if(sensorTemp->getTempAtual()>19 and sensorTemp->getTempAtual()<=27){
+     tela->carregar(lcd,4375);//1min 10s
+  }else{
+     tela->carregar(lcd,9375);//2min30s 9375
+  }
+   lcd.setCursor(0,0);
+  lcd.print("Para assoprar");
+   lcd.setCursor(0,1);
+   lcd.print("botao select");
+  if(tela->escolhaButton()==5){
+           delay(3000);
+           lcd.clear();
            sensorTemp->celsius(sensors,sensor1);
            sensorTemp->imprimirTemp();//imprimir resultados da temperatura
            sensorMQ->sensorGas(pinoMQ3);
-          
            sensorMQ->imprimirMQ3();   
            lcd.setCursor(0,0);
            lcd.print("Temperatura:");
@@ -113,16 +104,44 @@ void loop(){
            lcd.setCursor(0,1);
            lcd.print("MQ3:");
            lcd.print(sensorMQ->getVAtual());
-           delay(1000);
+           delay(3000);
            lcd.clear();
            lcd.setCursor(0,0);
            lcd.print("Resultado:");
            lcd.setCursor(0,1);
-           lcd.print(bebado(sensorMQ->getVAtual(),rele));
-           delay(1000);// reexecutar a cada 1 segundo
-         }
-         
-       
+           lcd.print(
+           sistemaMetodos->bebado(sensorMQ->getVAtual(),rele,(int)sensorTemp->getTempAtual(),sensorMQ->getVMax()));
+           delay(1000);//
+  }
+}
+
+//------------------------------LOOP-----------------------------------------------------
+void loop(){
+ if(sistemaMetodos->sistemaEstado(led,botao)){//Verificar se o sistema está ligado
+           lcd.clear();//limpar display lcd
+           sensorTemp->celsius(sensors,sensor1);//função pegar temperatura
+           sensorMQ->sensorGas(pinoMQ3);//função pegar valor ppm
+           lcd.setCursor(0,0);//escolher mostrar na parte superior do display
+           lcd.print("Temperatura:");
+           lcd.print((int)sensorTemp->getTempAtual());//pegar valor da temperatura
+           lcd.print(" C");
+           lcd.setCursor(0,1);//escolher mostrar na parte inferior do display
+           lcd.print("MQ3:");
+           lcd.print(sensorMQ->getVAtual());//pegar valor do mq3
+           delay(3000);//esperar 3 segundos
+           lcd.clear();//limpar display lcd
+           lcd.setCursor(0,0);//escolher mostrar na parte superior do display
+           lcd.print("Resultado:");
+           lcd.setCursor(0,1);//escolher mostrar na parte inferior do display
+          lcd.print(//chamada da função para verificar se está bebado
+sistemaMetodos->bebado(sensorMQ->getVAtual(),rele,(int)sensorTemp->getTempAtual(),sensorMQ->getVMax()));
+           if((int)sensorTemp->getTempAtual()<=19){//se a temperatura for inferior a 19ºC
+            delay(150000);//esperar 2minutos e 30 segundos
+           }else if((int)sensorTemp->getTempAtual()>19 and (int)sensorTemp->getTempAtual()<27){
+            delay(120000);//esperar 2minutos
+           }else{//se a temperatura for superior ou igual a 27ºC
+            delay(145000);//esperar 2minutos e 25 segundos
+           }
   }else{//Se o sitema estiver desligado
        lcd.clear();
        lcd.setCursor(4,0);
@@ -133,7 +152,31 @@ void loop(){
        digitalWrite(rele, HIGH);
        delay(100);
        noNewTone(buzzer);
-       delay(1000);//reexecutar a cada 2 segundo
+       delay(2000);//reexecutar a cada 2 segundo
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
