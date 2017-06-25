@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.5)  6 JUN 2017 01:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.5)  24 JUN 2017 21:43
 entering extended mode
 **./Projeto.tex
 (Projeto.tex
@@ -1508,7 +1508,7 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 395.
  [33
 
  <./figs/tabela1.png>]
-<figs/tabela3.png, id=1341, 573.64313pt x 115.18031pt>
+<figs/tabela3.png, id=1342, 573.64313pt x 115.18031pt>
 File: figs/tabela3.png Graphic file (type png)
  <use figs/tabela3.png>
 Package pdftex.def Info: figs/tabela3.png used on input line 407.
@@ -1526,7 +1526,7 @@ Package pdftex.def Info: figs/logoIFG.jpg used on input line 407.
  [34
 
  <./figs/tabela3.png>]
-<figs/tabela2.png, id=1375, 873.2625pt x 117.43875pt>
+<figs/tabela2.png, id=1376, 873.2625pt x 117.43875pt>
 File: figs/tabela2.png Graphic file (type png)
  <use figs/tabela2.png>
 Package pdftex.def Info: figs/tabela2.png used on input line 420.
@@ -1625,7 +1625,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 505.
 Here is how much of TeX's memory you used:
  18079 strings out of 493334
  350601 string characters out of 3129357
- 419259 words of memory out of 3000000
+ 419260 words of memory out of 3000000
  21007 multiletter control sequences out of 15000+200000
  22703 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1643,9 +1643,9 @@ dpi600\ecss0800.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
 jknappen\ec\dpi600\ecss1095.pk> <C:\Users\MRafael\AppData\Local\MiKTeX\2.9\font
 s\pk\ljfour\jknappen\ec\dpi600\ecss1440.pk> <C:\Users\MRafael\AppData\Local\MiK
 TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx0600.pk>
-Output written on Projeto.pdf (41 pages, 2170084 bytes).
+Output written on Projeto.pdf (41 pages, 2170721 bytes).
 PDF statistics:
- 2059 PDF objects out of 2073 (max. 8388607)
+ 2060 PDF objects out of 2073 (max. 8388607)
  118 named destinations out of 1000 (max. 500000)
  305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
