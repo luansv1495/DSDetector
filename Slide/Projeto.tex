@@ -1,0 +1,505 @@
+
+% Aspas duplas: ``''
+%
+%	\begin{figure}
+%		\centering
+%			\includegraphics[width=6cm]{figs/figura}
+%		\label{fig:figura1}
+%	\end{figure}
+
+%\documentclass[notes=only]{beamer} % Descomente aqui para compilar apenas as notas
+\documentclass{beamer} % Descomente aqui para compilar apenas os slides
+\usepackage[brazilian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{beamerthemesplit}
+\usepackage{graphics,epsfig, subfigure}
+\usepackage{url}
+\usepackage{graphicx}
+\bibliographystyle{plain}
+\mode<presentation> {
+	\usetheme{Warsaw}
+  \usecolortheme{rose}
+  \usefonttheme{professionalfonts}
+  \setbeamertemplate{footline}[frame number]
+  
+}
+
+\logo{\includegraphics[width=1.5cm]{figs/logoIFG}} % Adiciona o logo do INF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title [DSD] {Detector de concentração de álcool com base em Arduíno} %[Título reduzido]{Título estendido} - Título reduzido fica no rodapé do slide inicial
+\author[Maycon Rafael C. Borba, Luan Viana e Lisandro Almeida]{Lisandro Almeida, Luan Viana e Maycon Borba}
+ 
+ %[Autor reduzido]{Autor estendido} - Autor reduzido fica no rodapé do slide inicial
+\institute[IFGoiano]{Instituto Federal Goiano - Campus Rio Verde}
+\date{\today}
+\bibliographystyle{plain}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+	\titlepage
+}
+	
+\begin{frame}[allowframebreaks]
+	\frametitle{Sumário}
+	\tableofcontents
+	
+\end{frame}
+%\frame {
+%	\frametitle{Sumário}
+%	\tableofcontents
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introdução}
+\frame {
+\frametitle{Introdução}
+
+	\begin{itemize}
+		\item Junto com o desenvolvimento da economia, mais pessoas têm carros e por isso, mais carros
+aparecem nas estradas.
+Só no ano de 2016 foram 216.262 acidentes dos quais 7.619 foram por ingestão de álcool. 
+		\begin{figure}[!htb]
+		\includegraphics[width=8cm]{figs/figura1}
+		\centering % centralizada
+		\caption{Total de Acidentes em 2016}
+		\label{fig1}
+		\end{figure}
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Introdução}
+
+	\begin{itemize}
+		\item Muitos motoristas ignoram o perigo de dirigir depois de beber. A forma mais precisa de
+determinar se o motorista ingeriu ou não bebida alcoolica é a detecção das quantidades de
+álcool no sangue, que pode ser obtido através do exame de sangue, respiração, saliva e urina. 
+		\begin{figure}[!htb]
+		\includegraphics[width=7cm]{figs/figura2}
+		\centering % centralizada
+		\caption{Tipos dos Acidentes Causados Por Ingestão de Alcool.
+}
+		\label{fig2}
+		\end{figure}
+\end{itemize}
+	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objetivo}
+
+\frame {
+\frametitle{Objetivo}
+
+	\begin{itemize}
+				\item O objetivo deste trabalho é elaborar um sistema embarcado para detecção de concentração de álcool baseado no Arduino, que futuramemte possa ser implantado em um veículo para que apenas se locomova caso o motorista não esteja sobre efeito de alcool, assim evitando um possível acidente.
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fundamentação teórica}
+\frame{
+\frametitle{Fundamentação teórica}
+	\begin{center}
+	\large{\textbf{Fundamentação teórica}}
+	\end{center}
+}
+\subsection{Lei Nº 11.705}
+\frame {
+\frametitle{Lei Nº 11.705 (Lei Seca)}
+	\begin{itemize}
+	\item Está lei altera a Lei no 9.503, de 23 de setembro de 1997, e a Lei no 9.294, de 15 de julho de 1996, nos termos do § 4º do art. 220 da Constituição Federal, para inibir o consumo de bebida alcoólica por condutor de veículo automotor, e dá outras providências. 
+	\end{itemize}	
+}
+\note{
+	que ?institui o Código de Trânsito Brasileiro?\\
+	que dispõe sobre as restrições ao uso e à propaganda de produtos fumígeros, bebidas alcoólicas, medicamentos, terapias e defensivos agrícolas\\
+}
+\frame {
+\frametitle{Punição}
+	\begin{itemize}
+	\item De acordo com a nova legislação, o motorista que for flagrado com nível de álcool acima do permitido (0,1 mg/l de sangue) terá que pagar uma multa de R\$ 2.934,70 eterá a carteira de habilitação suspensa pelo prazo de 12 meses.
+	\item O pior é para quem estiver embriagado (níveis acima de 0,3 mg/l): o motorista corre o risco de ser preso, e a detenção é de 6 meses a 1 ano. 
+	\end{itemize}	
+}
+\note{
+}
+\frame {
+\frametitle{Tempo para poder dirigir}
+	\begin{itemize}
+	\item Tempo em média o álcool leva para desaparecer do organismo:
+	\begin{figure}[!htb]
+		\includegraphics[width=9cm]{figs/tabela4}
+		\centering % centralizada
+		\end{figure}
+	\item A margem de erro do bafômetro, segundo o Inmetro, é de apenas 1 \%. 
+	\end{itemize}	
+}
+\note{
+}
+\subsection{Arduino IDE}
+\frame {
+\frametitle{Arduino IDE}
+		 \begin{figure}[!htb]
+		\includegraphics[width=9cm]{figs/interface}
+		\centering % centralizada
+		\end{figure}
+		
+}
+\note{
+explicar conexão com a placa, e sobre usar uma derivação do c++;
+}
+\subsection{Hardware Arduino}
+\frame {
+\frametitle{Hardware Arduino}
+			 \begin{figure}[!htb]
+		\includegraphics[width=6cm]{figs/imagem10}
+		\caption{Arduino.cc}
+		\includegraphics[width=4cm]{figs/imagem11}
+		\centering % centralizada
+		\end{figure}
+}
+\note{
+}
+\section{Git}
+\frame{
+\frametitle{Git}
+	\begin{figure}[!htb]
+		\includegraphics[width=7cm]{figs/git}
+		\centering % centralizada
+		\end{figure}
+		
+}
+
+\subsubsection{O que é Git?}
+\frame {
+\frametitle{O que é Git?}
+\begin{itemize}
+		\item Git é um sistema de controle de versão de arquivos. Através deles podemos desenvolver projetos na qual diversas pessoas podem contribuir simultaneamente no mesmo, editando e criando novos arquivos e permitindo que os mesmos possam existir sem o risco de suas alterações serem sobrescritas.
+\end{itemize}	
+}
+\note{
+}
+\subsubsection{Funcionalidade}
+\frame {
+\frametitle{Funcionalidade}
+\begin{itemize}
+		\item Permitir que um arquivo possa ser editado ao mesmo tempo por pessoas diferentes. Por mais complexo que isso seja, ele tenta manter tudo em ordem para evitar problemas para nós desenvolvedores.
+\end{itemize}	
+}
+\note{
+Imagine o caos entre duas pessoas abrindo o mesmo arquivo ao mesmo tempo. Uma das aplicações do git é justamente essa.
+}
+\section{GitHub}
+\frame{
+\frametitle{GitHub}
+	\begin{itemize}
+		\item O Github é um serviço web que oferece diversas funcionalidades extras aplicadas ao git. Além disso, quase todos os projetos/ frameworks/ bibliotecas sobre desenvolvimento open source estão no github.
+\end{itemize}
+	\begin{figure}[!htb]
+		\includegraphics[width=7cm]{figs/github}
+		\centering % centralizada
+		\end{figure}
+		
+}
+\note{
+Resumindo, você poderá usar gratuitamente o github para hospedar seus projetos pessoais. \\
+, e você pode acompanhá-los através de novas versões, contribuir informando bugs ou até mesmo enviando código e correções. 
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Metodologia}
+\frame {
+\frametitle{Metodologia}
+
+	\begin{itemize}
+		\item Produção de um bafômetro controlado pela plataforma Arduino;
+		\item Realização de medições de concentrações de álcool no ar com uma boa aproximação
+dos valores reais das concentrações;
+		\item Exibir o valor adquirido em um Display de Cristal Líquido;
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Drive Safe Detector(DSDetector)}
+\frame {
+\frametitle{Drive Safe Detector}
+	 \begin{itemize}
+		\item O DSDetector, um sistema embarcado projetado em c++, utiliza o paradigma de programação orientado a objetos, feito totalmente na plataforma Arduino. Ele é composto por dois periféricos de entrada, Sensor de gás MQ-3 e sensor de Temperatura, três periféricos de saída, Display Lcd, Buzzer Beep e Led Vermelho, e demais componentes.
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Esquema do sistema}
+\frame {
+\frametitle{Esquema Parte 1}
+	 \begin{figure}[!htb]
+		\includegraphics[width=8cm]{figs/imagem12}
+		\raggedright
+		\caption{Esquema do sistema}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+
+\frame {
+\frametitle{Esquema Parte 2}
+	 \begin{figure}[!htb]
+		\includegraphics[width=8cm]{figs/imagem17}
+		\raggedright
+		\caption{Esquema do sistema}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+\subsection{Diagrama UML}
+\frame {
+\frametitle{UML}
+	 \begin{figure}[!htb]\raggedright
+	 	\includegraphics[width=8.7cm]{figs/imagem18}
+		\caption{Diagrama UML}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Funcionamento Parte 1}
+	 \begin{itemize}
+		\item O DSDetector, será acoplado a um veículo tendo como fonte de alimentação a bateria do veículo com tensão de 12v a qual será regulada, a partir da montagen do sistema no veículo ele será ligado, ficando em funcionamento por tempo inderteminado, caso o motorista deslige o sistema ele não poderá dar partida no veículo e o sistema acionara o Buzzer Beep.
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Funcionamento}
+\frame {
+\frametitle{Funcionamento Parte 1}
+	 \begin{figure}[!htb]
+		\includegraphics[width=7cm]{figs/imagem14}
+		\label{fig6}
+	\end{figure}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Funcionamento Parte 2}
+	 \begin{itemize}
+		\item Assim que ligado, o sistema terá um tempo para entrar em operação, devido ao sensor MQ-3 que precisa ser aquecido, tempo o qual irá variar de acordo com a temperatura ambiente, após a inicialização o sistema estará em funcionamento total.
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 12 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Funcionamento Parte 2}
+	 \begin{figure}[!htb]
+		\includegraphics[width=5.7cm]{figs/setup2}
+		\label{fig6}
+	\end{figure}	
+}
+\note{
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 13 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Funcionamento Parte 3}
+	 \begin{itemize}
+		\item Logo após a inicialização do sistema vai entrar em modo de espera até que o motorista aperte o botão select, então o sistema fará a primeira leitura de concentração de alcool na respiração do motorista e a temperatura ambiente.
+\end{itemize}	
+}
+\note{
+}
+\frame {
+\frametitle{Funcionamento Parte 3}
+	 \begin{figure}[!htb]
+		\includegraphics[width=8.5cm]{figs/setup1}
+		\label{fig6}
+	\end{figure}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 15 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Funcionamento Parte 4}
+	 \begin{itemize}
+		\item O sistema irá ficar verificando se o motorista ingeriu álcool ou não, caso motorista tenha ingerido álcool o sistema não irá permitir que o motorista ligue o veículo.
+\end{itemize}	
+\begin{figure}[!htb]
+		\includegraphics[width=9.8cm]{figs/imagem16}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+\frame {
+\frametitle{Funcionamento Parte 5}
+	 \begin{itemize}
+		\item Logo após a primeira verificação o sistema irá rodar em segundo plano, verificando se à álcool no ambiente e lendo a temperatura para ajustar com a detecção de álcool no ambiente.
+\end{itemize}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 14 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame {
+\frametitle{Funcionamento Parte 5}
+	 \begin{figure}[!htb]
+		\includegraphics[width=9.2cm]{figs/imagem13}
+		\label{fig6}
+	\end{figure}	
+}
+\note{
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 16 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resultados}
+\frame {
+\frametitle{Metodologia dos Testes}
+	 \begin{itemize}
+		\item Foram feitas coletas de dados de acordo com os seguintes intervalos de temperatura, temperatura menor ou igual a 19ºC, maior que 19ºC e menor que 27ºC e maior ou igual a 27ºC, intervalos os quais foram verificados mudanças na coleta do sensor MQ-3. 
+\end{itemize}	
+}
+\note{
+}
+\frame {
+\frametitle{Fórmula}
+	 \begin{itemize}
+		\item BAC(em mg/L)=BrAc(em mg/L)*FATOR. 
+		\item BAC = é a concentração de álcool no sangue.
+		\item BrAc = é a concentração de álcool na
+respiração.
+		\item FATOR = varia de país para país no caso do Brasil é 0,3.
+\end{itemize}	
+}
+\note{
+}
+\frame {
+\frametitle{Tabela 1}
+	 \begin{itemize}
+		\item Valores do sensor MQ-3 de acordo com cada faixa de temperatura, logo após o aquecimento do sensor MQ-3. 
+\end{itemize}	
+\begin{figure}[!htb]
+		\includegraphics[width=11cm]{figs/tabela1}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+\frame {
+\frametitle{Tabela 2}
+	 \begin{itemize}
+		\item Depois da detecção de álcool o sensor MQ-3 demora um certo tempo para restabelecer seus valores normais, o ppm abaixa rapidamente até um certo ponto depois vai abaixando de forma despadronizada com tempo indefinido para restabelecer o valor inicial.
+\end{itemize}	
+\begin{figure}[!htb]
+		\includegraphics[width=10cm]{figs/tabela3}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+
+\frame {
+\frametitle{Tabela 3}
+	 \begin{itemize}
+		\item Depois da detecção de álcool no sensor MQ-3 e a espera para o mesmo se restabelecer o codigo sofre alteração devido a forma despadronizada para a volta do valor inicial, sendo agora os valores para detecção modificados.
+\end{itemize}	
+\begin{figure}[!htb]
+		\includegraphics[width=11cm]{figs/tabela2}
+		\label{fig6}
+	\end{figure}
+}
+\note{
+}
+\section{Referências Bibliograficas}
+\frame {
+\frametitle{Referências Bibliograficas}
+\begin{thebibliography}{9}
+\bibitem{datashettemp}
+  Maxin Integrated, \emph{Programmable Resolution 1-Wire Digital Thermometer}. Disponível em:
+  http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf.
+\bibitem{gitonewire}
+  Paul Brook, \emph{Repositories GitHub, Arduino One-Wire library}. Disponível em:
+  https://github.com/pbrook/arduino-onewire. 16 de outubro de 2012.
+\bibitem{gitdallas}
+ Miles Burton, \emph{Arduino Library for Maxim Temperature Integrated Circuits}. Disponível em:
+  https://github.com/milesburton/Arduino-Temperature-Control-Library.\\ 11 de abril de 2017.
+ \end{thebibliography}
+}
+\frame {
+\frametitle{Referências Bibliograficas}
+\begin{thebibliography}{9}
+
+\bibitem{mq-3}
+  Antony García González, \emph{Sensor MQ-3, un Detector de Alcohol}. Disponível em:
+  http://panamahitek.com/sensor-mq-3/. 1 de fevereiro de 2014.
+\bibitem{lcd}
+  Arduino e Cia, \emph{Shield LCD 16x2 com Keypad}. Disponível em:
+  http://www.arduinoecia.com.br/2013/08/arduino-shield-lcd-16x2-com-keypad.html. \\ 27 de agosto de 2013.
+ \end{thebibliography}
+}
+\frame {
+\frametitle{Referências Bibliograficas}
+\begin{thebibliography}{9}
+\bibitem{sistema}
+  Guilherme Biff Zarelli, \emph{Arduino Sensor de Gás Detector de Gás (Arduino MQ Gas Sensor)}. Disponível em:
+  http://helpdev.com.br/2013/07/07/arduino-sensor-de-gas-detector-de-gas-arduino-mq-gas-sensor/. 7 de julho de 2013.
+\bibitem{placa}
+  ARDUINO e GENUINO PRODUCTS, \emph{Arduino MEGA 2560 e Genuino MEGA 2560}. Disponível em:
+  https://www.arduino.cc/en/main/arduinoBoardMega2560.
+  \bibitem{iginicao}
+  Saulo Anderson Bibiano Jardim, \emph{Como Funciona o Sistema de Ignição}. Disponível em:
+  http://www.ebah.com.br/content/ABAAAA8pgAC/como-funciona-sistema-ignicao.
+   \end{thebibliography}
+}
+\frame {
+\frametitle{Referências Bibliograficas}
+\begin{thebibliography}{9}
+   \bibitem{git}
+  Git, \emph{Git - Controle de Versões Rápidas}. Disponível em:
+  https://git-scm.com/doc.
+ \bibitem{argouml}
+  Tigris.org Open Source Software Engineering Tools, \emph{ArgoUML Documentation}. Disponível em:
+ http://argouml.tigris.org/documentation/. 29 de janeiro de 2011.
+ \bibitem{github}
+  GitHub Inc, \emph{The World's Leading Software Sevelopment Platform}. Disponível em:
+ https://github.com/.
+  \end{thebibliography}
+}
+\frame {
+\frametitle{Referências Bibliograficas}
+\begin{thebibliography}{9}
+\bibitem{leiseca}
+  Lei Seca, \emph{Lei Nº 11.705, de 19 de junho de 2008}. Disponível em:
+ http://www.planalto.gov.br/ccivil03/ato2007-2010/2008/lei/l11705.htm.\\ 16  de junho de 2008.
+\bibitem{leiseca}
+ Inmetro, \emph{Etilômetro (Bafômetro) Controle pelo Inmetro}. Disponível em:
+ http://www.inmetro.rs.gov.br/etilometro.html.
+ \bibitem{conexaotemp}
+  Blog FILIPEFLOP, \emph{Medindo temperatura debaixo d`água com DS18B20}. Disponível em:
+  http://blog.filipeflop.com/sensores/sensor-de-temperatura-ds18b20-arduino.html.\\ 2 de junho de 2015.
+ \end{thebibliography}
+}
+\frame {
+\frametitle{Referências Bibliograficas}
+\begin{thebibliography}{9}
+\bibitem{arduinodocumentacao}
+  Arduino IDE 1.8.2, \emph{Language Reference}. Disponível em:
+  https://www.arduino.cc/en/Reference/HomePage. 
+\bibitem{fritzaing}
+  Fritzing Eletronics Made Easy, \emph{Fritzing References}. Disponível em:
+  http://fritzing.org/learning/fullreference.
+  \end{thebibliography}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

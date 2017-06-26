@@ -1,0 +1,19 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {brazilian}
+\beamer@sectionintoc {1}{Introdu\c c\~ao}{4}{0}{1}
+\beamer@sectionintoc {2}{Objetivo}{6}{0}{2}
+\beamer@sectionintoc {3}{Fundamenta\c c\~ao te\'orica}{7}{0}{3}
+\beamer@subsectionintoc {3}{1}{Lei N\IeC {\textordmasculine } 11.705}{8}{0}{3}
+\beamer@subsectionintoc {3}{2}{Arduino IDE}{11}{0}{3}
+\beamer@subsectionintoc {3}{3}{Hardware Arduino}{12}{0}{3}
+\beamer@sectionintoc {4}{Git}{13}{0}{4}
+\beamer@subsubsectionintoc {4}{0}{1}{O que \'e Git?}{14}{0}{4}
+\beamer@subsubsectionintoc {4}{0}{2}{Funcionalidade}{15}{0}{4}
+\beamer@sectionintoc {5}{GitHub}{16}{0}{5}
+\beamer@sectionintoc {6}{Metodologia}{17}{0}{6}
+\beamer@sectionintoc {7}{Drive Safe Detector(DSDetector)}{18}{0}{7}
+\beamer@subsectionintoc {7}{1}{Esquema do sistema}{19}{0}{7}
+\beamer@subsectionintoc {7}{2}{Diagrama UML}{21}{0}{7}
+\beamer@subsectionintoc {7}{3}{Funcionamento}{23}{0}{7}
+\beamer@sectionintoc {8}{Resultados}{31}{0}{8}
+\beamer@sectionintoc {9}{Refer\^encias Bibliograficas}{36}{0}{9}
